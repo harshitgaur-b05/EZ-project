@@ -41,7 +41,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="max-w-7xl mx-auto h-[70px] relative bg-white rounded-full shadow-lg overflow-hidden">
+    <nav className="fixed top-0 left-0 w-full h-[70px] bg-white/25 z-50">
       {/* Logo - Left side */}
       <div className="absolute left-6 top-1/2 -translate-y-1/2 z-50">
         <img 
@@ -89,32 +89,49 @@ const Navbar = () => {
       </motion.button>
 
       {/* Sliding Glass Menu - Desktop & Mobile */}
-      <motion.div
-        className="absolute top-0 right-0 w-full h-full bg-white/95 backdrop-blur-md flex items-center justify-end pr-20 gap-8 rounded-full"
-        variants={menuVariants}
-        initial="closed"
-        animate={isOpen ? 'open' : 'closed'}
-      >
-        {navLinks.map((link) => (
-          <a
-            key={link.name}
-            href={link.href}
-            className="text-gray-800 text-sm font-medium px-5 py-2.5 rounded-full hover:bg-orange-50 hover:text-orange-500 transition-all hover:scale-105"
-            onClick={() => setIsOpen(false)}
-          >
-            {link.name}
-          </a>
-        ))}
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            {/* Background */}
+            <motion.div
+              className="absolute top-0 right-0 w-full h-full"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+            />
 
-        <a
-          href="#contact"
-          className="bg-linear-to-r from-orange-500 to-orange-400 text-white px-7 py-3 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 transition-all hover:scale-105 hover:-translate-y-0.5"
-          onClick={() => setIsOpen(false)}
-        >
-          Let's Talk
-          <Mail size={16} />
-        </a>
-      </motion.div>
+            {/* Content */}
+            <motion.div
+              className="absolute top-0 right-0 w-full h-full flex items-center justify-end pr-20 gap-8"
+              variants={menuVariants}
+              initial="closed"
+              animate="open"
+              exit="closed"
+            >
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-gray-800 text-sm font-medium px-5 py-2.5 rounded-full hover:bg-orange-50 hover:text-orange-500 transition-all hover:scale-105"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </a>
+              ))}
+
+              <a
+                href="#contact"
+                className="bg-linear-to-r from-orange-500 to-orange-400 text-white px-7 py-3 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 transition-all hover:scale-105 hover:-translate-y-0.5"
+                onClick={() => setIsOpen(false)}
+              >
+                Let's Talk
+                <Mail size={16} />
+              </a>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
