@@ -1,1 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&family=Halant:wght@300;400;500;600;700&family=Instrument+Sans:wght@400;500;600;700&display=swap');
+
 @import "tailwindcss";
+
+@theme {
+  --font-island: 'Island Moments', cursive;
+  --font-halant: 'Halant', serif;
+  --font-instrument: 'Instrument Sans', sans-serif;
+
+
+  --color-brand-blue: #0F3255;
+  --color-primary: #F15D2B
+}
