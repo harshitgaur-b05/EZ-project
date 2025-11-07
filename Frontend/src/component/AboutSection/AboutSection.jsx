@@ -6,38 +6,48 @@ import people from '../../assets/about/people.svg';
 import rightArrow from '../../assets/about/right-arrow.svg';
 import tajmehal from '../../assets/about/tajmehal.svg';
 import topArrow from '../../assets/about/top-arrow.svg';
+import Page from '../../assets/about/Page.png'
+import Pin from '../../assets/about/Pin.png'
 
 const StickyNote = ({ content, className = '' }) => {
     return (
         <motion.div
-            className={`bg-[#F9E89B] p-8 rounded-lg shadow-lg relative ${className}`}
+            className={`p-10 rounded-lg shadow-xl relative w-full max-w-md ${className}`}
             style={{
-                transform: 'rotate(-5deg)',
-
-                backgroundColor: '#FDD0C1',
-                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.8'/%3E%3C/svg%3E")`,
-
+                transform: 'rotate(-15deg)',
+                backgroundImage: `url(${Page})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+                minHeight: '400px',
             }}
             transition={{ duration: 0.3 }}
         >
-            {/* Paper clip decoration */}
-            <div className="absolute -top-4 right-8">
-                <svg width="40" height="60" viewBox="0 0 40 60" fill="none">
-                    <path
-                        d="M20 5 C15 5, 12 8, 12 13 L12 45 C12 50, 15 53, 20 53 C25 53, 28 50, 28 45 L28 15"
-                        stroke="#666"
-                        strokeWidth="2"
-                        fill="none"
-                    />
-                </svg>
+            {/* Yellow filter overlay - stronger opacity */}
+            <div 
+                className="absolute inset-0 pointer-events-none rounded-lg"
+                style={{
+                    backgroundColor: 'rgba(249, 232, 155, 0.6)',  // Increased from 0.3 to 0.6
+                    mixBlendMode: 'multiply',
+                }}
+            />
+
+            {/* Pin decoration */}
+            <div className="absolute -top-6 -right-5 z-10">
+                <img
+                    src={Pin}
+                    alt="pin"
+                    className="w-20 h-20"
+                />
             </div>
 
-            <p className="text-[#0F3255] font-medium leading-relaxed text-lg">
+            <p className="text-brand-blue font-halant font-semibold leading-relaxed text-xl relative z-5">
                 {content}
             </p>
         </motion.div>
     );
 };
+
 
 const TeamSection = () => {
     const roles = [
