@@ -10,20 +10,21 @@ const Aboutus = () => {
         { number: '10+', label: 'Experts Team' }
     ];
     return (
-        <section className="min-h-screen px-6 md:px-12 lg:px-24 py-10">
-            <div className="max-w-7xl mx-auto">
+        <section className="min-h-screen  px-6 md:px-12 lg:px-24 py-10">
+            <div className="w-full mx-auto">
                 {/* Header Text */}
-                <div className="grid lg:grid-cols-2 gap-6 mb-0">
+                <div className="grid lg:grid-cols-2  gap-0 mb-0">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
+                        className=' flex items-center flex-col  pt-20'
                     >
-                        <h3 className="font-halant text-brand-blue text-2xl mb-3">
+                        <h3 className="font-halant text-brand-blue  text-3xl mb-3">
                             A montage of familiar faces and names.
                         </h3>
-                        <p className="text-gray-600 text-sm leading-relaxed max-w-md">
+                        <p className="text-gray-600 text-lg font-instrument text-center leading-relaxed max-w-md">
                             Some stories come from the biggest names. Others begin with bold, rising voices.
                             We've been fortunate to walk alongside both - listening, creating, and building stories that matter.
                         </p>
@@ -35,7 +36,7 @@ const Aboutus = () => {
                         transition={{ duration: 0.8, delay: 0.2 }}
                         viewport={{ once: true }}
                     >
-                        <p className="font-island text-primary text-3xl md:text-4xl italic leading-relaxed">
+                        <p className="font-island  text-brand-blue  text-center justify-center text-3xl md:text-5xl italic leading-relaxed">
                             Every project is more than just a brief - it's a new chapter waiting to be written.
                             Together, we've crafted tales that inspire, connect, and endure.
                         </p>
@@ -43,18 +44,19 @@ const Aboutus = () => {
                 </div>
 
                 {/* Stats Cards and Mountain Section - Side by Side */}
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid lg:grid-cols-2  gap-0 items-center">
                     {/* Left Side - Stats Cards */}
-                    <div className="flex flex-row gap-8">
+                    <div className="flex flex-row gap-8" style={{ perspective: '1000px' }}>
                         {stats.map((stat, index) => (
                             <motion.div
                                 key={index}
-                                className="p-10 rounded-lg shadow-lg max-w-sm relative overflow-visible"
+                                className="p-10 rounded-lg shadow-xl relative w-full max-w-sm"
                                 style={{
+                                    transform: 'rotate(40deg)',
                                     backgroundImage: `url(${PageAsset})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
-                                    transform: `rotate(${index === 0 ? '5deg' : index === 1 ? '0deg' : '-5deg'})`,
+                                    backgroundRepeat: 'no-repeat',
                                     zIndex: index,
                                     marginLeft: index === 0 ? '0' : '-70px',
                                 }}
@@ -84,6 +86,8 @@ const Aboutus = () => {
                             </motion.div>
                         ))}
                     </div>
+
+
 
 
                     {/* Right Side - Mountain with Full Circle Ring */}

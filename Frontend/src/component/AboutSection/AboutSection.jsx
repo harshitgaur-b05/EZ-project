@@ -98,7 +98,7 @@ const TeamSection = () => {
                     transition={{ delay: 0.5 + index * 0.2 }}
                     viewport={{ once: true }}
                 >
-                    <p className="font-island  italic text-4xl text-[#0F3255] whitespace-nowrap">
+                    <p className="font-island  italic text-4xl text-brand-blue whitespace-nowrap">
                         {role.title}
                     </p>
                     {/* Arrow SVG */}
@@ -116,7 +116,7 @@ const TeamSection = () => {
 };
 
 const AboutSection = () => {
-    const aboutText = `Some craft films. Some build brands. Some curate art. We bring it all together – a collective of storytellers driven by one belief: every project deserves to be more than just a message; it should become a masterpiece. From first spark to final frame, from raw ideas to timeless visuals – we shape stories that stay with you.`;
+    const aboutText = `Some craft films. Some build brands. Some curate art. We bring it all together  –  a collective of storytellers driven by one belief: every project deserves to be more than just a message; it should become a masterpiece. From first spark to final frame, from raw ideas to timeless visuals – we shape stories that stay with you.`;
 
     return (
         <section className="relative min-h-screen py-20 px-8 overflow-hidden"
