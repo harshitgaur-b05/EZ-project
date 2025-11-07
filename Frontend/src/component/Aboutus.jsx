@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import MountainImage from '../assets/aboutus/mountain-image.svg';
 import CircularRing from '../assets//aboutus/circular-ring.svg';
 import PageAsset from '../assets/about/Page.png';
-import Pin from '../assets/about/Pin.png';
 
 const Aboutus = () => {
     const stats = [
@@ -10,18 +9,6 @@ const Aboutus = () => {
         { number: '50+', label: 'Happy Clients' },
         { number: '10+', label: 'Experts Team' }
     ];
-
-    const logos = [
-        { name: 'TED', angle: 0 },
-        { name: 'Coca-Cola', angle: 45 },
-        { name: 'AEON', angle: 90 },
-        { name: 'ARION', angle: 135 },
-        { name: 'TED Talk', angle: 180 },
-        { name: 'Design', angle: 225 },
-        { name: 'Reserve', angle: 270 },
-        { name: 'Serve', angle: 315 }
-    ];
-
     return (
         <section className="min-h-screen px-6 md:px-12 lg:px-24 py-10">
             <div className="max-w-7xl mx-auto">
@@ -58,75 +45,94 @@ const Aboutus = () => {
                 {/* Stats Cards and Mountain Section - Side by Side */}
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     {/* Left Side - Stats Cards */}
-                    <div className="flex flex-row gap-8">
-                        {stats.map((stat, index) => (
-                            <motion.div
-                                key={index}
-                                className="p-10 rounded-lg shadow-lg max-w-sm relative overflow-visible"
-                                style={{
-                                    backgroundImage: `url(${PageAsset})`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    transform: `rotate(${index === 0 ? '-6deg' : index === 1 ? '2deg' : '10deg'})`,
-                                    zIndex: index, // Normal z-index so last card is on top
-                                    marginLeft: index === 0 ? '0' : '-70px', // Overlap cards
-                                }}
-                                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                                transition={{ delay: index * 0.2, duration: 0.6 }}
-                                viewport={{ once: true }}
-                            >
-                                {/* Yellow filter overlay */}
-                                <div
-                                    className="absolute inset-0 pointer-events-none rounded-lg"
-                                    style={{
-                                        backgroundColor: 'rgba(249, 232, 155, 0.6)',
-                                        mixBlendMode: 'multiply',
-                                    }}
-                                />
+          <div className="flex flex-row gap-8">
+    {stats.map((stat, index) => (
+        <motion.div
+            key={index}
+            className="p-10 rounded-lg shadow-lg max-w-sm relative overflow-visible"
+            style={{
+                backgroundImage: `url(${PageAsset})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                transform: `rotate(${index === 0 ? '5deg' : index === 1 ? '0deg' : '-5deg'})`,
+                zIndex: index,
+                marginLeft: index === 0 ? '0' : '-70px',
+            }}
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: index * 0.2, duration: 0.6 }}
+            viewport={{ once: true }}
+        >
+            {/* Yellow filter overlay */}
+            <div
+                className="absolute inset-0 pointer-events-none rounded-lg"
+                style={{
+                    backgroundColor: 'rgba(249, 232, 155, 0.6)',
+                    mixBlendMode: 'multiply',
+                }}
+            />
 
-                                {/* Content */}
-                                <div className="relative z-10">
-                                    <p className="text-brand-blue font-halant text-6xl font-bold">
-                                        {stat.number}
-                                    </p>
-                                    <p className="text-primary font-instrument text-xl mt-2">
-                                        {stat.label}
-                                    </p>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
+            {/* Content */}
+            <div className="relative z-10">
+                <p className="text-brand-blue font-halant text-6xl font-bold">
+                    {stat.number}
+                </p>
+                <p className="text-primary font-instrument text-xl mt-2">
+                    {stat.label}
+                </p>
+            </div>
+        </motion.div>
+    ))}
+</div>
+
 
                     {/* Right Side - Mountain with Full Circle Ring */}
                     <div className="relative w-full h-[600px] flex items-center justify-center">
                         {/* Wrapper Container - Centered */}
                         <div className="absolute w-[450px] h-[450px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                            {/* Top Semicircle */}
-                            <div className="absolute w-full h-1/2 top-0 left-0 overflow-hidden">
+                            {/* Top Semicircle - Rotates and grows */}
+                            <motion.div
+                                className="absolute w-full h-1/2 top-0 left-0 overflow-hidden origin-bottom"
+                                initial={{ scale: 0, rotate: 0, opacity: 0 }}
+                                whileInView={{ scale: 1, rotate: -540, opacity: 1 }}
+                                transition={{
+                                    duration: 8.5,
+                                    ease: [0.22, 1, 0.36, 1] // Custom ease-out curve
+                                }}
+                                viewport={{ once: true }}
+                            >
                                 <img
                                     src={CircularRing}
                                     alt="Semicircular Ring Top"
                                     className="w-full h-full object-contain"
                                 />
-                            </div>
+                            </motion.div>
 
-                            {/* Bottom Semicircle (Mirrored 180°) */}
-                            <div className="absolute w-full h-1/2 bottom-0 left-0 overflow-hidden">
+                            {/* Bottom Semicircle (Mirrored 180°) - Rotates and grows */}
+                            <motion.div
+                                className="absolute w-full h-1/2 bottom-0 left-0 overflow-hidden origin-top"
+                                initial={{ scale: 0, rotate: 0, opacity: 0 }}
+                                whileInView={{ scale: 1, rotate: -540, opacity: 1 }}
+                                transition={{
+                                    duration: 8.5,
+                                    ease: [0.22, 1, 0.36, 1] // Custom ease-out curve
+                                }}
+                                viewport={{ once: true }}
+                            >
                                 <img
                                     src={CircularRing}
                                     alt="Semicircular Ring Bottom"
                                     className="w-full h-full object-contain scale-y-[-1]"
                                 />
-                            </div>
+                            </motion.div>
                         </div>
 
-                        {/* Mountain in Center - Centered & Moved Up */}
+                        {/* Mountain in Center - Centered & Animated */}
                         <motion.div
                             className="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8 }}
+                            transition={{ duration: 0.8, delay: 0.5 }}
                             viewport={{ once: true }}
                         >
                             <img
@@ -136,7 +142,6 @@ const Aboutus = () => {
                             />
                         </motion.div>
                     </div>
-
                 </div>
             </div>
         </section>
