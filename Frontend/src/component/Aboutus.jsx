@@ -62,32 +62,39 @@ const Aboutus = () => {
                         {stats.map((stat, index) => (
                             <motion.div
                                 key={index}
-                                className="p-8 rounded-lg shadow-lg max-w-xs relative overflow-hidden"
+                                className="p-10 rounded-lg shadow-lg max-w-sm relative overflow-visible"
                                 style={{
                                     backgroundImage: `url(${PageAsset})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
-                                    transform: 'rotate(-5deg)'
+                                    transform: `rotate(${index === 0 ? '-6deg' : index === 1 ? '2deg' : '10deg'})`,
+                                    zIndex: index, // Normal z-index so last card is on top
+                                    marginLeft: index === 0 ? '0' : '-70px', // Overlap cards
                                 }}
-                                initial={{ opacity: 0, scale: 0.8, x: -50 }}
-                                whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                                initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
                                 transition={{ delay: index * 0.2, duration: 0.6 }}
                                 viewport={{ once: true }}
                             >
-                                {/* Optional: Overlay for better text readability */}
-                                <div className="absolute inset-0 bg-black/20 rounded-lg"></div>
+                                {/* Yellow filter overlay */}
+                                <div
+                                    className="absolute inset-0 pointer-events-none rounded-lg"
+                                    style={{
+                                        backgroundColor: 'rgba(249, 232, 155, 0.6)',
+                                        mixBlendMode: 'multiply',
+                                    }}
+                                />
 
                                 {/* Content */}
                                 <div className="relative z-10">
-                                    <p className="text-brand-blue font-halant text-5xl font-bold">
+                                    <p className="text-brand-blue font-halant text-6xl font-bold">
                                         {stat.number}
                                     </p>
-                                    <p className="text-primary font-instrument text-lg mt-2">
+                                    <p className="text-primary font-instrument text-xl mt-2">
                                         {stat.label}
                                     </p>
                                 </div>
                             </motion.div>
-
                         ))}
                     </div>
 
