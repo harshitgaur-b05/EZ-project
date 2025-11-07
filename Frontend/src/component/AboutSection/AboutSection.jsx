@@ -56,8 +56,8 @@ const TeamSection = () => {
         {
             title: 'Branding Experts',
             arrow: leftArrow,
-            position: 'bottom-2 -left-20',
-            arrowClass: 'bottom-8 left-0 w-28 h-28'
+            position: '-bottom-10 -left-60',
+            arrowClass: 'bottom-9 left-17 w-48 h-48'
         },
     ];
 
@@ -88,7 +88,7 @@ const TeamSection = () => {
                     transition={{ delay: 0.5 + index * 0.2 }}
                     viewport={{ once: true }}
                 >
-                    <p className="font-serif italic text-2xl text-[#0F3255] whitespace-nowrap">
+                    <p className="font-island  italic text-4xl text-[#0F3255] whitespace-nowrap">
                         {role.title}
                     </p>
                     {/* Arrow SVG */}
@@ -109,10 +109,7 @@ const AboutSection = () => {
     const aboutText = `Some craft films. Some build brands. Some curate art. We bring it all together – a collective of storytellers driven by one belief: every project deserves to be more than just a message; it should become a masterpiece. From first spark to final frame, from raw ideas to timeless visuals – we shape stories that stay with you.`;
 
     return (
-        <section className="relative min-h-screen py-20 px-8 overflow-hidden bg-[#F5F5F0]"
-            style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.15'/%3E%3C/svg%3E")`,
-            }}
+        <section className="relative min-h-screen py-20 px-8 overflow-hidden"
         >
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Top Section with Sticky Note and Team */}
@@ -140,7 +137,7 @@ const AboutSection = () => {
                     <motion.div
                         className="w-full lg:w-1/2 flex justify-center lg:justify-center lg:-ml-32"
                         initial={{ opacity: 0, x: -100 }}
-                        whileInView={{ opacity: 0.4, x: 0 }}
+                        whileInView={{ opacity: 0.8, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
@@ -153,18 +150,18 @@ const AboutSection = () => {
 
                     {/* Bottom Text and CTA - Right Half */}
                     <motion.div
-                        className="w-full lg:w-1/2 text-center lg:text-left"
+                        className="w-full lg:w-1/2 text-center lg:text-center"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                         viewport={{ once: true }}
                     >
-                        <h2 className="text-2xl text-[#0F3255] font-medium mb-8 max-w-3xl mx-auto leading-tight">
+                        <h2 className="text-2xl text-[#0F3255] font-halant font-medium mb-8 max-w-3xl mx-auto leading-tight">
                             Take a closer look at the stories V bring to life.
                         </h2>
 
                         <motion.button
-                            className="bg-[#FF5733] text-white px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-shadow"
+                            className="bg-[#FF5733] text-white font-instrument  px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-shadow"
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
                         >
