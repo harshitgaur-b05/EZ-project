@@ -13,8 +13,10 @@ const StickyNote = ({ content, className = '' }) => {
             className={`bg-[#F9E89B] p-8 rounded-lg shadow-lg relative ${className}`}
             style={{
                 transform: 'rotate(-5deg)',
+
                 backgroundColor: '#FDD0C1',
-                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.8'/%3E%3C/svg%3E")`,
+                backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.8'/%3E%3C/svg%3E")`,
+
             }}
             transition={{ duration: 0.3 }}
         >
@@ -60,7 +62,7 @@ const TeamSection = () => {
     ];
 
     return (
-        <div className="relative h-[450px]  flex items-end justify-center pb-8">
+        <div className="relative h-[450px] flex items-end justify-center pb-8">
             {/* People SVG */}
             <motion.div
                 className="w-[500px] h-auto relative z-10"
@@ -80,7 +82,7 @@ const TeamSection = () => {
             {roles.map((role, index) => (
                 <motion.div
                     key={role.title}
-                    className={`absolute  ${role.position}`}
+                    className={`absolute ${role.position}`}
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.5 + index * 0.2 }}

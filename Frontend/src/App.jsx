@@ -1,4 +1,5 @@
 import './App.css'
+import AboutSection from './component/AboutSection/AboutSection'
 import ContactForm from './component/ContactForm'
 import HeroSection from './component/HeroSection'
 import Navbar from './component/NavBar'
@@ -6,6 +7,7 @@ import AboutSection from './component/AboutSection/AboutSection'
 
 function App() {
   return (
+
     <>
       <Navbar />
       <div 
@@ -22,6 +24,7 @@ function App() {
         <AboutSection />
       </div>
     </>
+
   )
 }
 
