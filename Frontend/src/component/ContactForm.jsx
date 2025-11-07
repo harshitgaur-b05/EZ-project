@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ContactForm = () => {
+const ContactForm = ({ onSubmitSuccess }) => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -82,6 +82,10 @@ const ContactForm = () => {
           phone: '',
           message: ''
         });
+        // Call the onSubmitSuccess function to switch to the main content
+        if (onSubmitSuccess) {
+          onSubmitSuccess();
+        }
       } else {
         setErrors({ submit: 'Failed to submit. Please try again.' });
       }
@@ -285,7 +289,7 @@ const ContactForm = () => {
 
               {submitSuccess && (
                 <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg text-center">
-                  Form Submitted
+                  Form Submitted Successfully!
                 </div>
               )}
 

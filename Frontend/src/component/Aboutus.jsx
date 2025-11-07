@@ -3,6 +3,7 @@ import MountainImage from '../assets/aboutus/mountain-image.svg';
 import CircularRing from '../assets//aboutus/circular-ring.svg';
 import PageAsset from '../assets/about/Page.png';
 
+
 const Aboutus = () => {
     const stats = [
         { number: '85+', label: 'Projects' },
@@ -11,14 +12,10 @@ const Aboutus = () => {
     ];
     return (
         <section className="min-h-screen  px-6 md:px-12 lg:px-24 py-10">
-            <div className="w-full mx-auto">
+            <div className="w-full ">
                 {/* Header Text */}
                 <div className="grid lg:grid-cols-2  gap-0 mb-0">
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
                         className=' flex items-center flex-col  pt-20'
                     >
                         <h3 className="font-halant text-brand-blue  text-3xl mb-3">
@@ -30,12 +27,8 @@ const Aboutus = () => {
                         </p>
                     </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        viewport={{ once: true }}
-                    >
+
+                    <motion.div>
                         <p className="font-island  text-brand-blue  text-center justify-center text-3xl md:text-5xl italic leading-relaxed">
                             Every project is more than just a brief - it's a new chapter waiting to be written.
                             Together, we've crafted tales that inspire, connect, and endure.
@@ -43,16 +36,18 @@ const Aboutus = () => {
                     </motion.div>
                 </div>
 
+
                 {/* Stats Cards and Mountain Section - Side by Side */}
                 <div className="grid lg:grid-cols-2  gap-0 items-center">
                     {/* Left Side - Stats Cards */}
-                    <div className="flex flex-row gap-8" style={{ perspective: '1000px' }}>
+                    <div className="flex flex-row gap-8">
                         {stats.map((stat, index) => (
                             <motion.div
                                 key={index}
                                 className="p-10 rounded-lg shadow-xl relative w-full max-w-sm"
                                 style={{
-                                    transform: 'rotate(40deg)',
+                                    transform: 'rotateX(10deg) rotateY(-20deg) rotateZ(-5deg)',  // Tilted towards left
+                                    transformStyle: 'preserve-3d',
                                     backgroundImage: `url(${PageAsset})`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center',
@@ -60,10 +55,6 @@ const Aboutus = () => {
                                     zIndex: index,
                                     marginLeft: index === 0 ? '0' : '-70px',
                                 }}
-                                initial={{ opacity: 0, scale: 0.8, y: 20 }}
-                                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                                transition={{ delay: index * 0.2, duration: 0.6 }}
-                                viewport={{ once: true }}
                             >
                                 {/* Yellow filter overlay */}
                                 <div
@@ -73,6 +64,7 @@ const Aboutus = () => {
                                         mixBlendMode: 'multiply',
                                     }}
                                 />
+
 
                                 {/* Content */}
                                 <div className="relative z-10">
@@ -90,6 +82,7 @@ const Aboutus = () => {
 
 
 
+
                     {/* Right Side - Mountain with Full Circle Ring */}
                     <div className="relative w-full h-[600px] flex items-center justify-center">
                         {/* Wrapper Container - Centered */}
@@ -97,13 +90,6 @@ const Aboutus = () => {
                             {/* Top Semicircle - Rotates and grows */}
                             <motion.div
                                 className="absolute w-full h-1/2 top-0 left-0 overflow-hidden origin-bottom"
-                                initial={{ scale: 0, rotate: 0, opacity: 0 }}
-                                whileInView={{ scale: 1, rotate: -540, opacity: 1 }}
-                                transition={{
-                                    duration: 8.5,
-                                    ease: [0.22, 1, 0.36, 1] // Custom ease-out curve
-                                }}
-                                viewport={{ once: true }}
                             >
                                 <img
                                     src={CircularRing}
@@ -112,16 +98,10 @@ const Aboutus = () => {
                                 />
                             </motion.div>
 
+
                             {/* Bottom Semicircle (Mirrored 180°) - Rotates and grows */}
                             <motion.div
                                 className="absolute w-full h-1/2 bottom-0 left-0 overflow-hidden origin-top"
-                                initial={{ scale: 0, rotate: 0, opacity: 0 }}
-                                whileInView={{ scale: 1, rotate: -540, opacity: 1 }}
-                                transition={{
-                                    duration: 8.5,
-                                    ease: [0.22, 1, 0.36, 1] // Custom ease-out curve
-                                }}
-                                viewport={{ once: true }}
                             >
                                 <img
                                     src={CircularRing}
@@ -131,13 +111,10 @@ const Aboutus = () => {
                             </motion.div>
                         </div>
 
+
                         {/* Mountain in Center - Centered & Animated */}
                         <motion.div
                             className="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                            initial={{ opacity: 0, scale: 0.8 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8, delay: 0.5 }}
-                            viewport={{ once: true }}
                         >
                             <img
                                 src={MountainImage}
@@ -150,7 +127,10 @@ const Aboutus = () => {
             </div>
         </section>
 
+
     );
 };
 
+
 export default Aboutus;
+
