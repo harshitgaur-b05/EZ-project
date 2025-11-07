@@ -3,6 +3,7 @@ import AboutSection from './component/AboutSection/AboutSection'
 import ContactForm from './component/ContactForm'
 import HeroSection from './component/HeroSection'
 import Navbar from './component/NavBar'
+import Aboutus from './component/Aboutus'
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       >
         <HeroSection />
         <AboutSection />
+        <Aboutus/>
       </div>
     </>
 
