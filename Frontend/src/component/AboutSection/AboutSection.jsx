@@ -22,10 +22,10 @@ const StickyNote = ({ content, className = '' }) => {
                 minHeight: '250px',
             }}
             transition={{ duration: 0.3 }}
-            // Removed whileInView and viewport
+        // Removed whileInView and viewport
         >
             {/* Yellow filter overlay */}
-            <div 
+            <div
                 className="absolute inset-0 pointer-events-none rounded-lg"
                 style={{
                     backgroundColor: 'rgba(249, 232, 155, 0.6)',
