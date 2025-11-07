@@ -4,6 +4,7 @@ import ContactForm from './component/ContactForm'
 import HeroSection from './component/HeroSection'
 import Navbar from './component/NavBar'
 import Aboutus from './component/Aboutus'
+import PortfolioHighlightReel from './component/Portfolio'
 
 
 function App() {
@@ -21,8 +22,9 @@ function App() {
           `
         }}
       >
-        <HeroSection />
-        <AboutSection />
+        <PortfolioHighlightReel/>
+        {/* <HeroSection />
+        <AboutSection /> */}
         <Aboutus/>
       </div>
     </>
