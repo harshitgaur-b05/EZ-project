@@ -35,30 +35,30 @@ const contentMap = {
     quote: `"Filmmaking is a chance to live many lifetimes." - Robert Altman`,
     mainImage: FilmFrame,
     decorativeImages: [
-      { id: 1, src: Camera01, alt: "Decorative Film Reel", className: "fixed top-[15%] right-[8%] opacity-30 w-24 h-auto hidden lg:block", style: { transform: 'rotate(-5deg)' } },
-      { id: 2, src: Camera03, alt: "Decorative Video Camera", className: "fixed top-[45%] right-[14%] opacity-30 w-28 h-auto hidden lg:block", style: { transform: 'rotate(10deg)' } },
-      { id: 3, src: Camera04, alt: "Decorative Camera", className: "fixed bottom-[10%] left-[12%] opacity-30 w-28 h-auto hidden lg:block", style: { transform: 'rotate(0deg)' } },
-      { id: 4, src: Camera02, alt: "Decorative Tripod", className: "fixed bottom-[8%] right-[10%] opacity-30 w-24 h-auto hidden lg:block", style: { transform: 'rotate(5deg)' } },
+      { id: 1, src: Camera01, alt: "Decorative Film Reel", className: "absolute top-[15%] right-[4%] opacity-200 w-24 h-auto hidden lg:block", style: { transform: 'rotate(-5deg)' } },
+      { id: 2, src: Camera03, alt: "Decorative Video Camera", className: "absolute top-[45%] right-[9%] opacity-200 w-28 h-auto hidden lg:block", style: { transform: 'rotate(10deg)' } },
+      { id: 3, src: Camera04, alt: "Decorative Camera", className: "absolute bottom-[10%] left-[6%] opacity-200 w-28 h-auto hidden lg:block", style: { transform: 'rotate(0deg)' } },
+      { id: 4, src: Camera02, alt: "Decorative Tripod", className: "absolute bottom-[8%] right-[4%] opacity-200 w-24 h-auto hidden lg:block", style: { transform: 'rotate(5deg)' } },
     ],
   },
   1: {
     quote: `"Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs`,
     mainImage: BrandingFrame,
     decorativeImages: [
-      { id: 1, src: BrandingVector01, alt: "Decorative Branding Vector", className: "fixed top-[15%] left-[10%] opacity-30 w-24 h-auto hidden lg:block", style: { transform: 'rotate(15deg)' } },
-      { id: 2, src: BrandingVector02, alt: "Decorative Branding Vector", className: "fixed top-[50%] right-[12%] opacity-30 w-28 h-auto hidden lg:block", style: { transform: 'rotate(-10deg)' } },
-      { id: 3, src: BrandingVector03, alt: "Decorative Branding Vector", className: "fixed bottom-[12%] right-[8%] opacity-30 w-20 h-auto hidden lg:block", style: { transform: 'rotate(5deg)' } },
-      { id: 4, src: BrandingVector04, alt: "Decorative Branding Vector", className: "fixed bottom-[15%] left-[15%] opacity-30 w-32 h-auto hidden lg:block", style: { transform: 'rotate(-5deg)' } },
+      { id: 1, src: BrandingVector01, alt: "Decorative Branding Vector", className: "absolute top-[15%] right-[4%] opacity-200 w-24 h-auto hidden lg:block", style: { transform: 'rotate(-5deg)' } },
+      { id: 2, src: BrandingVector02, alt: "Decorative Branding Vector", className: "absolute top-[50%] right-[12%] opacity-200 w-28 h-auto hidden lg:block", style: { transform: 'rotate(-10deg)' } },
+      { id: 3, src: BrandingVector03, alt: "Decorative Branding Vector", className: "absolute bottom-[12%] right-[8%] opacity-200 w-20 h-auto hidden lg:block", style: { transform: 'rotate(5deg)' } },
+      { id: 4, src: BrandingVector04, alt: "Decorative Branding Vector", className: "absolute bottom-[15%] left-[4%] opacity-200 w-32 h-auto hidden lg:block", style: { transform: 'rotate(-5deg)' } },
     ],
   },
   2: {
     quote: `"Art is not what you see, but what you make others see." - Edgar Degas`,
     mainImage: ArtFrame,
     decorativeImages: [
-      { id: 1, src: ArtCurationIcons01, alt: "Decorative Art Icon", className: "fixed top-[20%] right-[10%] opacity-30 w-24 h-auto hidden lg:block", style: { transform: 'rotate(10deg)' } },
-      { id: 2, src: ArtCurationIcons02, alt: "Decorative Art Icon", className: "fixed top-[55%] left-[14%] opacity-30 w-28 h-auto hidden lg:block", style: { transform: 'rotate(-15deg)' } },
-      { id: 3, src: ArtCurationIcons03, alt: "Decorative Art Icon", className: "fixed bottom-[15%] left-[10%] opacity-30 w-20 h-auto hidden lg:block", style: { transform: 'rotate(20deg)' } },
-      { id: 4, src: ArtCurationIcons04, alt: "Decorative Art Icon", className: "fixed bottom-[10%] right-[12%] opacity-30 w-32 h-auto hidden lg:block", style: { transform: 'rotate(-5deg)' } },
+      { id: 1, src: ArtCurationIcons01, alt: "Decorative Art Icon", className: "absolute top-[15%] right-[4%] opacity-200 w-24 h-auto hidden lg:block", style: { transform: 'rotate(-5deg)' } },
+      { id: 2, src: ArtCurationIcons03, alt: "Decorative Art Icon", className: "absolute top-[50%] right-[8%] opacity-200 w-20 h-auto hidden lg:block", style: { transform: 'rotate(-10deg)' } },
+      { id: 3, src: ArtCurationIcons02, alt: "Decorative Art Icon", className: "absolute bottom-[15%] left-[10%] opacity-200 w-20 h-auto hidden lg:block", style: { transform: 'rotate(20deg)' } },
+      { id: 4, src: ArtCurationIcons04, alt: "Decorative Art Icon", className: "absolute bottom-[15%] right-[12%] opacity-200 w-24 h-auto hidden lg:block", style: { transform: 'rotate(-5deg)' } },
     ],
   },
 };
@@ -87,7 +87,7 @@ const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
 
   // Safely access polaroidData from props first, then from location state, and finally fallback to default.
   const polaroidData = propPolaroidData || location.state?.polaroidData || defaultPolaroidData;
-  
+
   // Use a valid ID to select content, defaulting to 0 if the ID is invalid.
   const content = contentMap[polaroidData.id] || contentMap[0];
 
@@ -95,7 +95,7 @@ const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
     // If onBackClick function is provided by the parent component (App.jsx state-based navigation)
     if (onBackClick) {
       onBackClick();
-    } 
+    }
     // Otherwise, use browser history navigation
     else {
       // Check if there's a previous page in history
@@ -110,7 +110,7 @@ const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
 
   return (
     <section className="min-h-screen bg-background flex items-center justify-center px-6 md:px-12 lg:px-24"
-    style={{
+      style={{
         backgroundColor: "#FDD0C1",
         backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.8'/%3E%3C/svg%3E")`,
       }}
@@ -146,8 +146,8 @@ const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
           <div
             className={`relative bg-white overflow-hidden mx-auto transition-all duration-500 ${isCardHovered ? "-translate-y-4 rotate-1" : "rotate-0"}`}
             style={{
-              maxWidth: '340px',
-              padding: "10px 16px 15px 16px",
+              maxWidth: '280px',
+              padding: "8px 12px 12px 12px",
               boxShadow: isCardHovered
                 ? "0 25px 50px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.15)"
                 : "0 15px 35px rgba(0,0,0,0.15), 0 5px 15px rgba(0,0,0,0.1)",
@@ -171,7 +171,7 @@ const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
 
           {/* Info Section */}
           <div className="max-w-lg relative">
-            <h2 className="text-xl md:text-2xl mb-10 text-gray-800 relative right-60 font-instrument whitespace-pre-line">
+            <h2 className="text-xl md:text-2xl mb-10 text-gray-800 relative right-40 font-instrument whitespace-pre-line ">
               {polaroidData.description}
             </h2>
             <div

@@ -53,15 +53,9 @@ Cultural Storytelling`,
   },
 ];
 
-export default function ShowcasePage({ onPolaroidClick, onPolaroidHover }) {
+export default function ShowcasePage({ onPolaroidClick }) {
   const handlePolaroidClick = (polaroidData) => {
     onPolaroidClick(polaroidData);
-  };
-
-  const handlePolaroidMouseEnter = (polaroidData) => {
-    if (onPolaroidHover) {
-      onPolaroidHover(polaroidData);
-    }
   };
 
   return (
@@ -98,29 +92,27 @@ export default function ShowcasePage({ onPolaroidClick, onPolaroidHover }) {
                 className="relative" // Container for polaroid
               >
                 <motion.div
-                  className={`bg-white shadow-lg border border-gray-200 w-64  flex flex-col items-center ${
-                    index === 0 ? "rotate-8" : index === 2 ? "-rotate-8" : ""
-                  } transition-transform duration-300 cursor-pointer hover:scale-105`}
+                  className={`bg-white shadow-lg border border-gray-200 w-56  flex flex-col items-center ${index === 0 ? "rotate-8" : index === 2 ? "-rotate-8" : ""
+                    } transition-transform duration-300 cursor-pointer hover:scale-105`}
                   style={{ boxShadow: "0 8px 24px 0 rgb(0 0 0 / 0.07)" }}
                   onClick={() => handlePolaroidClick(feat)}
-                  onMouseEnter={() => handlePolaroidMouseEnter(feat)}
                 >
                   <img
                     src={PaperTape}
                     alt="tape"
-                    className={`absolute w-32 ${
-                      index === 0
+                    className={`absolute w-28 ${index === 0
                         ? "-left-10 -top-7 -rotate-10"
                         : index === 1
-                        ? "left-1/2 -translate-x-1/2 -top-6 rotate-3"
-                        : "-right-8 -top-7 rotate-35"
-                    } z-20`}
+                          ? "left-1/2 -translate-x-1/2 -top-6 rotate-3"
+                          : "-right-8 -top-7 rotate-35"
+                      } z-20`}
                   />
                   <motion.img
                     src={feat.svgImage}
                     alt={feat.imageTitle}
                     className="w-full h-auto object-contain  relative z-10"
-                    style={{ maxHeight: index === 1 ? '320px' : '360px', 
+                    style={{
+                      maxHeight: index === 1 ? '280px' : '320px',
                       rotate: index === 0 ? '-7.5deg' : index === 2 ? '7.5deg' : '0deg',
                       transformOrigin: 'center'
                     }}
