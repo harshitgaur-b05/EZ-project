@@ -26,18 +26,18 @@ function App() {
         <div id="hero">
           <HeroSection />
         </div>
-        <div id="story">
+        <div id="stories">
           <AboutSection />
         </div>
         <div id="services">
           <PortfolioHighlightReel/>
         </div>
-        <div id="stories">
+        <div id="story">
           <Aboutus/>
         </div>
-        <div id="contact">
+        {/* <div id="contact">
           <ContactForm />
-        </div>
+        </div> */}
       </div>
     </>
   )

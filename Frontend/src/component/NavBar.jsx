@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import Logo from "../assets/logo.svg";
@@ -9,6 +9,8 @@ import CloseIconSVG from '../assets/navbar/navicon-open.svg';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showLogo, setShowLogo] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -28,6 +30,27 @@ const Navbar = () => {
       });
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      const heroSection = document.getElementById('hero');
+      
+      if (heroSection) {
+        const heroRect = heroSection.getBoundingClientRect();
+        // Show logo when hero section is in view (top of page)
+        setShowLogo(heroRect.bottom > 50); // Show logo if hero section is still visible
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const menuVariants = {
     closed: {
@@ -49,22 +72,23 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
+    { name: 'Varnan Portfolio', href: '#services' },
     { name: 'Their Stories', href: '#stories' },
     { name: 'Our Story', href: '#story' },
-    { name: 'Varnan', href: '#varnan' }
   ];
 
   return (
     <nav className="fixed top-0 left-0 w-full h-[70px] bg-white/25 z-50">
-      {/* Logo - Left side */}
-      <div className="absolute left-6 top-1/2 -translate-y-1/2 z-50">
-        <img 
-          src={Logo} 
-          alt="V Films Logo" 
-          className="h-10 w-auto object-contain"
-        />
-      </div>
+      {/* Logo - Left side - only show when on hero section */}
+      {showLogo && (
+        <div className="absolute left-6 top-1/2 -translate-y-1/2 z-50">
+          <img 
+            src={Logo} 
+            alt="V Films Logo" 
+            className="h-10 w-auto object-contain"
+          />
+        </div>
+      )}
 
       {/* Menu Toggle Button with SVG Images */}
       <motion.button
@@ -140,16 +164,18 @@ const Navbar = () => {
                 </a>
               ))}
 
-              <button
-                className="bg-linear-to-r from-orange-500 to-orange-400 text-white px-7 py-3 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 transition-all hover:scale-105 hover:-translate-y-0.5"
-                onClick={() => {
+              <a
+                href="#contact"
+                className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-7 py-3 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 transition-all hover:scale-105 hover:-translate-y-0.5"
+                onClick={(e) => {
+                  e.preventDefault();
                   setIsOpen(false);
                   scrollToSection('contact');
                 }}
               >
                 Let's Talk
                 <Mail size={16} />
-              </button>
+              </a>
             </motion.div>
           </>
         )}
