@@ -95,10 +95,17 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#FBF4F0] relative overflow-hidden">
-      {/* Layer 1: Background is the bg-[#FBF4F0] above (z-index: 0) */}
-
-      {/* Layer 2: Decorative Circles - Middle layer */}
+    <div 
+      className="min-h-screen relative overflow-hidden"
+      style={{
+        backgroundColor: '#FDDECF',
+        backgroundImage: `
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.5' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' fill='%23FDD0C1' opacity='1'/%3E%3C/svg%3E"),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25'%3E%3Cfilter id='texture'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.25' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23texture)' opacity='0.5'/%3E%3C/svg%3E")
+        `
+      }}
+    >
+      {/* Decorative Circles */}
       <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[280px] md:h-[280px] lg:w-[350px] lg:h-[350px] z-10 pointer-events-none">
         <img src={Topleft} alt="Top Right Decoration" className="w-full h-full" />
       </div>
@@ -107,14 +114,14 @@ const ContactForm = () => {
         <img src={Bottomleft} alt="Bottom Left Decoration" className="w-full h-full" />
       </div>
 
-      {/* Layer 3: Main Content - Top layer */}
+      {/* Main Content */}
       <div className="container mx-auto px-6 md:px-8 lg:px-12 py-6 md:py-10 lg:py-6 relative z-20">
-        <div className="grid grid-cols-1  lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
 
           {/* Left Section */}
-          <div className="space-y-6 pt-8 relative top-20 ">
+          <div className="space-y-6 pt-8 relative top-20">
             <div className="mb-1 space-y-1 font-instrument">
-              <p className="text-lg text-[#252729] ">
+              <p className="text-lg text-[#252729]">
                 Whether you have an idea, a question, or simply want
               </p>
               <p className="text-lg text-[#252729]">
@@ -135,113 +142,113 @@ const ContactForm = () => {
           </div>
 
           {/* Right Section - Form */}
-     <div className="space-y-4  relative top-30">
-  <div className="text-center">
-    <h1 className="text-xl md:text-2xl font-normal font-halant text-[#252729] mb-1">
-      Join the Story
-    </h1>
-    <p className="text-sm md:text-base font-instrument text-[#252729]">
-      Ready to bring your vision to life? Let's talk.
-    </p>
-  </div>
+          <div className="space-y-4 relative top-30">
+            <div className="text-center">
+              <h1 className="text-xl md:text-3xl font-normal font-halant text-[#252729] mb-1">
+                Join the Story
+              </h1>
+              <p className="text-sm md:text-base font-instrument text-[#252729]">
+                Ready to bring your vision to life? Let's talk.
+              </p>
+            </div>
 
-  <div className="space-y-3">
-    <div>
-      <input
-        type="text"
-        name="name"
-        value={formData.name}
-        onChange={handleChange}
-        placeholder="Your name*"
-        className={`w-full px-3 py-2 text-sm bg-white border ${
-          errors.name ? 'border-red-500' : 'border-gray-200'
-        } rounded-lg focus:outline-none focus:border-primary transition-colors text-[#252729] font-instrument`}
-      />
-      {errors.name && (
-        <p className="text-red-500 text-xs mt-1">{errors.name}</p>
-      )}
-    </div>
+            <div className="space-y-3">
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your name*"
+                  className={`w-full px-3 py-2 text-sm bg-white border ${
+                    errors.name ? 'border-red-500' : 'border-gray-200'
+                  } rounded-lg focus:outline-none focus:border-primary transition-colors text-[#252729] font-instrument`}
+                />
+                {errors.name && (
+                  <p className="text-red-500 text-xs mt-1">{errors.name}</p>
+                )}
+              </div>
 
-    <div>
-      <input
-        type="email"
-        name="email"
-        value={formData.email}
-        onChange={handleChange}
-        placeholder="Your email*"
-        className={`w-full px-3 py-2 text-sm bg-white border ${
-          errors.email ? 'border-red-500' : 'border-gray-200'
-        } rounded-lg focus:outline-none focus:border-primary transition-colors text-[#252729] font-instrument`}
-      />
-      {errors.email && (
-        <p className="text-red-500 text-xs mt-1">{errors.email}</p>
-      )}
-    </div>
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="Your email*"
+                  className={`w-full px-3 py-2 text-sm bg-white border ${
+                    errors.email ? 'border-red-500' : 'border-gray-200'
+                  } rounded-lg focus:outline-none focus:border-primary transition-colors text-[#252729] font-instrument`}
+                />
+                {errors.email && (
+                  <p className="text-red-500 text-xs mt-1">{errors.email}</p>
+                )}
+              </div>
 
-    <div>
-      <input
-        type="tel"
-        name="phone"
-        value={formData.phone}
-        onChange={handleChange}
-        placeholder="Phone"
-        className={`w-full px-3 py-2 text-sm bg-white border ${
-          errors.phone ? 'border-red-500' : 'border-gray-200'
-        } rounded-lg focus:outline-none focus:border-primary transition-colors text-[#252729] font-instrument`}
-      />
-      {errors.phone && (
-        <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
-      )}
-    </div>
+              <div>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  placeholder="Phone"
+                  className={`w-full px-3 py-2 text-sm bg-white border ${
+                    errors.phone ? 'border-red-500' : 'border-gray-200'
+                  } rounded-lg focus:outline-none focus:border-primary transition-colors text-[#252729] font-instrument`}
+                />
+                {errors.phone && (
+                  <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
+                )}
+              </div>
 
-    <div>
-      <textarea
-        name="message"
-        value={formData.message}
-        onChange={handleChange}
-        placeholder="Your message*"
-        rows="4"
-        className={`w-full px-3 py-2 text-sm bg-white border ${
-          errors.message ? 'border-red-500' : 'border-gray-200'
-        } rounded-lg focus:outline-none focus:border-primary transition-colors resize-none text-[#252729] font-instrument`}
-      ></textarea>
-      {errors.message && (
-        <p className="text-red-500 text-xs mt-1">{errors.message}</p>
-      )}
-    </div>
+              <div>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Your message*"
+                  rows="4"
+                  className={`w-full px-3 py-2 text-sm bg-white border ${
+                    errors.message ? 'border-red-500' : 'border-gray-200'
+                  } rounded-lg focus:outline-none focus:border-primary transition-colors resize-none text-[#252729] font-instrument`}
+                ></textarea>
+                {errors.message && (
+                  <p className="text-red-500 text-xs mt-1">{errors.message}</p>
+                )}
+              </div>
 
-    {submitSuccess && (
-      <div className="bg-green-50 border border-green-200 text-green-700 px-3 py-2 rounded-lg text-center text-sm">
-        Form Submitted Successfully!
-      </div>
-    )}
+              {submitSuccess && (
+                <div className="bg-green-50 border border-green-200 text-green-700 px-3 py-2 rounded-lg text-center text-sm">
+                  Form Submitted Successfully!
+                </div>
+              )}
 
-    {errors.submit && (
-      <div className="bg-red-50 border border-red-200 text-red-700 px-3 py-2 rounded-lg text-center text-sm">
-        {errors.submit}
-      </div>
-    )}
+              {errors.submit && (
+                <div className="bg-red-50 border border-red-200 text-red-700 px-3 py-2 rounded-lg text-center text-sm">
+                  {errors.submit}
+                </div>
+              )}
 
-    <div className="w-full flex justify-center items-center pt-2">
-      <button
-        onClick={handleSubmit}
-        disabled={isSubmitting}
-        className="w-auto bg-primary cursor-pointer font-instrument shadow-[0_4px_12px_0_rgba(0,0,0,0.2)] text-white py-2.5 px-8 rounded-full text-sm font-medium hover:bg-[#d94e1f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-      >
-        {isSubmitting ? 'Submitting...' : 'Submit'}
-      </button>
-    </div>
-  </div>
+              <div className="w-full flex justify-center items-center pt-2">
+                <button
+                  onClick={handleSubmit}
+                  disabled={isSubmitting}
+                  className="w-auto bg-primary cursor-pointer font-instrument shadow-[0_4px_12px_0_rgba(0,0,0,0.2)] text-white py-2.5 px-8 rounded-full text-sm font-medium hover:bg-[#d94e1f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? 'Submitting...' : 'Submit'}
+                </button>
+              </div>
+            </div>
 
-  <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-[#252729] pt-2">
-    <a href="mailto:vernan@vernanfilms.co.in" className="text-primary transition-colors">
-      vernan@vernanfilms.co.in
-    </a>
-    <a href="tel:+919876164657" className="text-primary transition-colors">
-      +91 98761 64657
-    </a>
-  </div>
-</div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-[#252729] pt-2">
+              <a href="mailto:vernan@vernanfilms.co.in" className="text-primary transition-colors">
+                vernan@vernanfilms.co.in
+              </a>
+              <a href="tel:+919876164657" className="text-primary transition-colors">
+                +91 98761 64657
+              </a>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -253,7 +260,6 @@ const ContactForm = () => {
           font-weight: 400;
         }
 
-        /* Responsive breakpoints */
         @media (max-width: 480px) {
           .container {
             padding-left: 1rem;
@@ -279,7 +285,6 @@ const ContactForm = () => {
           }
         }
 
-        /* iPad specific */
         @media (width: 2048px) and (height: 2732px) {
           .container {
             max-width: 1800px;
