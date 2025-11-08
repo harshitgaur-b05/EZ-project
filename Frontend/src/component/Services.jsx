@@ -123,14 +123,25 @@ const Services = ({ onBackClick, polaroidData: propPolaroidData }) => {
           <div className="flex justify-center mt-3 sm:mt-4">
             <img src={Vector5} alt="decorative line" className="w-full max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-3xl" />
           </div>
+          
+          {/* Back Button - Positioned under underline for sm-lg screens */}
+          <div className="lg:hidden flex justify-center mt-6 sm:mt-8">
+            <button
+              onClick={handleBackClick}
+              className="px-4 sm:px-5 py-1 sm:py-2 border-2 border-[#d35400] bg-transparent text-[#d35400] rounded-full hover:cursor-pointer duration-300 flex items-center gap-2 text-xs sm:text-sm"
+            >
+              <img src={Icon} alt="Back icon" className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span>Back</span>
+            </button>
+          </div>
         </div>
 
-        {/* Back Button */}
+        {/* Back Button - Original position for lg screens */}
         <button
           onClick={handleBackClick}
-          className="absolute left-4 sm:left-6 md:left-8 lg:left-40 top-8 sm:top-10 md:top-12 lg:top-44 px-4 sm:px-5 md:px-6 py-1 sm:py-2 border-2 border-[#d35400] bg-transparent text-[#d35400] rounded-full hover:cursor-pointer duration-300 flex items-center gap-2 text-xs sm:text-sm"
+          className="hidden lg:flex absolute left-40 top-44 px-6 py-2 border-2 border-[#d35400] bg-transparent text-[#d35400] rounded-full hover:cursor-pointer duration-300 items-center gap-2 text-sm"
         >
-          <img src={Icon} alt="Back icon" className="w-3 h-3 sm:w-4 sm:h-4" />
+          <img src={Icon} alt="Back icon" />
           <span>Back</span>
         </button>
 
