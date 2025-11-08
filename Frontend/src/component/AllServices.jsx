@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 // Local Assets
 
 import PaperTape from "../assets/storyboard/PaperTape.svg";
-import LeftImage from "../assets/storyboard/Leftimage.svg";
-import MiddleImage from "../assets/storyboard/Middleimage.svg";
-import RightImage from "../assets/storyboard/Rightimage.svg";
+import Leftimage from "../assets/storyboard/Leftimage.svg";
+import Middleimage from "../assets/storyboard/Middleimage.svg";
+import Rightimage from "../assets/storyboard/Rightimage.svg";
 import FrameBorder from "../assets/storyboard/FrameBorder.svg";
 
 // Data for the polaroids
@@ -21,7 +21,7 @@ Documentaries
 Corporate Videos
 2D Animation Videos
 3D Animation Videos`,
-    svgImage: LeftImage,
+    svgImage: Leftimage,
     imageTitle: "Film Production",
   },
   {
@@ -35,7 +35,7 @@ Market Mapping
 Content Management
 Social Media Management
 Rebranding`,
-    svgImage: MiddleImage,
+    svgImage: Middleimage,
     imageTitle: "Brand Identity",
   },
   {
@@ -48,7 +48,7 @@ Art Festivals
 Live Performances
 Community Events
 Cultural Storytelling`,
-    svgImage: RightImage,
+    svgImage: Rightimage,
     imageTitle: "Art Curation",
   },
 ];
