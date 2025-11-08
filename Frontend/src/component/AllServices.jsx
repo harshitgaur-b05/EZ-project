@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Local Assets
-import underline from "../assets/storyboard/underline.svg";
+import underline from "../assets/storyboard/underline-asset.svg";
 import PaperTape from "../assets/storyboard/PaperTape.svg";
 import LeftImage from "../assets/storyboard/Leftimage.svg";
 import MiddleImage from "../assets/storyboard/Middleimage.svg";
