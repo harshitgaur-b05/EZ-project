@@ -45,7 +45,7 @@ const contentMap = {
     quote: `"Design is not just what it looks like and feels like. Design is how it works." - Steve Jobs`,
     mainImage: BrandingFrame,
     decorativeImages: [
-      { id: 1, src: BrandingVector01, alt: "Decorative Branding Vector", className: "absolute top-[15%] right-[4%] opacity-200 w-24 h-auto hidden lg:block", style: { transform: 'rotate(-5deg)' }},
+      { id: 1, src: BrandingVector01, alt: "Decorative Branding Vector", className: "absolute top-[15%] right-[4%] opacity-200 w-24 h-auto hidden lg:block", style: { transform: 'rotate(-5deg)' } },
       { id: 2, src: BrandingVector02, alt: "Decorative Branding Vector", className: "absolute top-[50%] right-[12%] opacity-200 w-28 h-auto hidden lg:block", style: { transform: 'rotate(-10deg)' } },
       { id: 3, src: BrandingVector03, alt: "Decorative Branding Vector", className: "absolute bottom-[12%] right-[8%] opacity-200 w-20 h-auto hidden lg:block", style: { transform: 'rotate(5deg)' } },
       { id: 4, src: BrandingVector04, alt: "Decorative Branding Vector", className: "absolute bottom-[15%] left-[4%] opacity-200 w-32 h-auto hidden lg:block", style: { transform: 'rotate(-5deg)' } },
@@ -87,7 +87,7 @@ const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
 
   // Safely access polaroidData from props first, then from location state, and finally fallback to default.
   const polaroidData = propPolaroidData || location.state?.polaroidData || defaultPolaroidData;
-  
+
   // Use a valid ID to select content, defaulting to 0 if the ID is invalid.
   const content = contentMap[polaroidData.id] || contentMap[0];
 
@@ -95,7 +95,7 @@ const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
     // If onBackClick function is provided by the parent component (App.jsx state-based navigation)
     if (onBackClick) {
       onBackClick();
-    } 
+    }
     // Otherwise, use browser history navigation
     else {
       // Check if there's a previous page in history
@@ -110,7 +110,10 @@ const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
 
   return (
     <section className="min-h-screen bg-background flex items-center justify-center px-6 md:px-12 lg:px-24"
-
+      style={{
+        backgroundColor: "#FDD0C1",
+        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.8'/%3E%3C/svg%3E")`,
+      }}
     >
       <div className="min-h-screen relative overflow-x-hidden font-serif w-full">
         {/* Decorative Images: Rendered dynamically based on ID */}
@@ -138,7 +141,7 @@ const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
         </button>
 
         {/* Main Content */}
-        <div className="flex flex-wrap justify-center items-start px-10 py-2 gap-10 lg:gap-20">
+        <div className="flex flex-wrap justify-center items-start px-10 py-10 gap-10 lg:gap-20">
           {/* Polaroid Card */}
           <div
             className={`relative bg-white overflow-hidden mx-auto transition-all duration-500 ${isCardHovered ? "-translate-y-4 rotate-1" : "rotate-0"}`}

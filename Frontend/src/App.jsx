@@ -109,7 +109,7 @@ function App() {
       <>
         <Navbar isVFilmsView={isVFilmsView} />
         <div 
-          className="min-h-screen" 
+          className="min-h-screen overflow-x-hidden" 
           style={{
             backgroundColor: '#FDDECF',
             backgroundImage: `
