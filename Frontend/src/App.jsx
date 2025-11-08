@@ -8,7 +8,7 @@ import HeroSection from './component/HeroSection'
 import Navbar from './component/NavBar'
 import AboutTeam from './component/AboutTeam'
 import PortfolioHighlightReel from './component/Portfolio'
-import AllServices from './component/AllServices';
+import AllServices from './component/Allservices';
 import Services from './component/Services';
 
 function AppContent({ onVFilmsViewChange }) {
