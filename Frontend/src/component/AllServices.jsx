@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 // Local Assets
 
 import Papertape from "../assets/storyboard/Papertape.svg";
-import Leftimage from "../assets/storyboard/Leftimage.svg";
-import Middleimage from "../assets/storyboard/Middleimage.svg";
-import Rightimage from "../assets/storyboard/Rightimage.svg";
+import leftimage from "../assets/storyboard/leftimage.svg";
+import middleimage from "../assets/storyboard/middleimage.svg";
+import rightimage from "../assets/storyboard/rightimage.svg";
 import FrameBorder from "../assets/storyboard/FrameBorder.svg";
 import  underline  from "../assets/storyboard/underline.svg";
 
