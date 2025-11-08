@@ -4,11 +4,11 @@ import { motion } from "framer-motion";
 // Local Assets
 
 import papertapeerrr  from "../assets/storyboard/papertapeerrr.svg";
-import leftimage from "../assets/storyboard/leftimage.svg";
-import middleimage from "../assets/storyboard/middleimage.svg";
-import rightimage from "../assets/storyboard/rightimage.svg";
-import FrameBorder from "../assets/storyboard/FrameBorder.svg";
-import  underline  from "../assets/storyboard/underline.svg";
+import leftimagee from "../assets/storyboard/Leftimagee.svg";
+import middleimagee from "../assets/storyboard/middleimagee.svg";
+import rightimagee from "../assets/storyboard/rightimagee.svg";
+import FrameBordere from "../assets/storyboard/FrameBordere.svg";
+import  underlinee  from "../assets/storyboard/underlinee.svg";
 
 // Data for the polaroids
 const showcaseData = [
@@ -22,7 +22,7 @@ Documentaries
 Corporate Videos
 2D Animation Videos
 3D Animation Videos`,
-    svgImage: leftimage,
+    svgImage: leftimagee,
     imageTitle: "Film Production",
   },
   {
@@ -36,7 +36,7 @@ Market Mapping
 Content Management
 Social Media Management
 Rebranding`,
-    svgImage: middleimage,
+    svgImage: middleimagee,
     imageTitle: "Brand Identity",
   },
   {
@@ -49,7 +49,7 @@ Art Festivals
 Live Performances
 Community Events
 Cultural Storytelling`,
-    svgImage: rightimage,
+    svgImage: rightimagee,
     imageTitle: "Art Curation",
   },
 ];
@@ -70,7 +70,7 @@ export default function AllServices({ onPolaroidClick }) {
             The storyboard reveals the breadth of our craft.
           </h1>
           <img
-            src={underline}
+            src={underlinee}
             alt="underline"
             className="mx-auto"
             style={{ width: "878px", height: "28px" }}
@@ -130,7 +130,7 @@ export default function AllServices({ onPolaroidClick }) {
       <div
         className="absolute bottom-0 left-0 w-full h-12 sm:h-16 md:h-20 lg:h-24"
         style={{
-          backgroundImage: `url(${FrameBorder})`,
+          backgroundImage: `url(${FrameBordere})`,
           backgroundRepeat: "repeat-x",
           backgroundSize: "auto 100%",
           backgroundPosition: "bottom",
