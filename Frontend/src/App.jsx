@@ -13,7 +13,7 @@ function App() {
 
   // Check if form was submitted in a previous session
   useEffect(() => {
-    const submitted = localStorage.getItem('formSubmitted');
+    const submitted = sessionStorage.getItem('formSubmitted');
     if (submitted === 'true') {
       setFormSubmitted(true);
     }
@@ -21,25 +21,28 @@ function App() {
 
   const handleFormSubmit = () => {
     setFormSubmitted(true);
-    // Store form submission status in local storage
-    localStorage.setItem('formSubmitted', 'true');
+    // Store form submission status in session storage
+    sessionStorage.setItem('formSubmitted', 'true');
   };
 
   // Function to reset form submission state
   const resetFormState = () => {
     setFormSubmitted(false);
-    localStorage.removeItem('formSubmitted');
+    sessionStorage.removeItem('formSubmitted');
   };
 
   return (
     <>
       {!formSubmitted ? (
         // Show ContactForm first
+        <>
+         <Navbar />
         <ContactForm onSubmitSuccess={handleFormSubmit} />
+        </>
       ) : (
         // After form submission, show Navbar and other components
         <>
-          <Navbar />
+         
           <div 
             className="min-h-screen" 
             style={{
