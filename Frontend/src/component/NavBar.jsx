@@ -13,6 +13,21 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+  
+  // Reusable function to scroll to a section with offset for fixed navbar
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = -80; // Account for fixed navbar height
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset + offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const menuVariants = {
     closed: {
@@ -114,20 +129,27 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   className="text-gray-800 text-sm font-medium px-5 py-2.5 rounded-full hover:bg-orange-50 hover:text-orange-500 transition-all hover:scale-105"
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsOpen(false);
+                    const sectionId = link.href.substring(1); // Remove the '#' from the href
+                    scrollToSection(sectionId);
+                  }}
                 >
                   {link.name}
                 </a>
               ))}
 
-              <a
-                href="#contact"
+              <button
                 className="bg-linear-to-r from-orange-500 to-orange-400 text-white px-7 py-3 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 transition-all hover:scale-105 hover:-translate-y-0.5"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  setIsOpen(false);
+                  scrollToSection('contact');
+                }}
               >
                 Let's Talk
                 <Mail size={16} />
-              </a>
+              </button>
             </motion.div>
           </>
         )}

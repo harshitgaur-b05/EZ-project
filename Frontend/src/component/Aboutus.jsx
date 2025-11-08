@@ -44,9 +44,9 @@ const Aboutus = () => {
                         {stats.map((stat, index) => (
                             <motion.div
                                 key={index}
-                                className="p-10 rounded-lg shadow-xl relative w-full max-w-sm"
+                                className="p-10 rounded-lg  shadow-[0_12px_40px_0_rgba(0,0,0,0.15)] relative w-full max-w-sm"
                                 style={{
-                                    transform: 'rotateX(10deg) rotateY(-20deg) rotateZ(-5deg)',  // Tilted towards left
+                                    transform: 'rotateX(10deg) rotateY(10deg) rotateZ(5deg)',  // Tilted towards left
                                     transformStyle: 'preserve-3d',
                                     backgroundImage: `url(${PageAsset})`,
                                     backgroundSize: 'cover',
@@ -68,7 +68,7 @@ const Aboutus = () => {
 
                                 {/* Content */}
                                 <div className="relative z-10">
-                                    <p className="text-brand-blue font-halant text-6xl font-bold">
+                                    <p className="text-brand-blue font-instrument text-6xl ">
                                         {stat.number}
                                     </p>
                                     <p className="text-primary font-instrument text-xl mt-2">

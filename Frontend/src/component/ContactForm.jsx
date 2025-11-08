@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Bottomleft from '../assets/formsvg/bottom-left-circle.svg'
 import Topleft from '../assets/formsvg/top-right-circle.svg'
 
-const ContactForm = ({ onSubmitSuccess }) => {
+const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -84,9 +84,6 @@ const ContactForm = ({ onSubmitSuccess }) => {
           phone: '',
           message: ''
         });
-        if (onSubmitSuccess) {
-          onSubmitSuccess();
-        }
       } else {
         setErrors({ submit: 'Failed to submit. Please try again.' });
       }
