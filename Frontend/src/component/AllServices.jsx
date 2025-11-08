@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 // Local Assets
 
 import papertaper  from "../assets/storyboard/papertaper.svg";
-import leftimagee from "../assets/storyboard/Leftimagee.svg";
+import leftimagee from "../assets/storyboard/leftimagee.svg";
 import middleimagee from "../assets/storyboard/middleimagee.svg";
 import rightimagee from "../assets/storyboard/rightimagee.svg";
 import FrameBordere from "../assets/storyboard/FrameBordere.svg";
