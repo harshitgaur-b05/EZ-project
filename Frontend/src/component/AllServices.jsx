@@ -22,7 +22,7 @@ Documentaries
 Corporate Videos
 2D Animation Videos
 3D Animation Videos`,
-    svgImage: Leftimage,
+    svgImage: leftimage,
     imageTitle: "Film Production",
   },
   {
@@ -36,7 +36,7 @@ Market Mapping
 Content Management
 Social Media Management
 Rebranding`,
-    svgImage: Middleimage,
+    svgImage: middleimage,
     imageTitle: "Brand Identity",
   },
   {
@@ -49,7 +49,7 @@ Art Festivals
 Live Performances
 Community Events
 Cultural Storytelling`,
-    svgImage: Rightimage,
+    svgImage: rightimage,
     imageTitle: "Art Curation",
   },
 ];
