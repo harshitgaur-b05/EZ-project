@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 // Local Assets
 import underline from "../assets/storyboard/underline.svg";
 import PaperTape from "../assets/storyboard/PaperTape.svg";
-import LeftImage from "../assets/storyboard/LeftImage.svg";
-import MiddleImage from "../assets/storyboard/MiddleImage.svg";
-import RightImage from "../assets/storyboard/RightImage.svg";
+import LeftImage from "../assets/storyboard/Leftimage.svg";
+import MiddleImage from "../assets/storyboard/Middleimage.svg";
+import RightImage from "../assets/storyboard/Rightimage.svg";
 import FrameBorder from "../assets/storyboard/FrameBorder.svg";
 
 // Data for the polaroids
