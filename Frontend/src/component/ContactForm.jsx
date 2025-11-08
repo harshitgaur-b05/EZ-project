@@ -112,22 +112,22 @@ const ContactForm = ({ onSubmitSuccess }) => {
 
       {/* Layer 3: Main Content - Top layer */}
       <div className="container mx-auto px-6 md:px-8 lg:px-12 py-6 md:py-10 lg:py-6 relative z-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
+        <div className="grid grid-cols-1  lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
           
           {/* Left Section */}
-          <div className="space-y-6 pt-8">
-            <div className="space-y-2">
-              <p className="text-lg text-[#252729]">
+          <div className="space-y-6 pt-8 relative top-20 ">
+            <div className="mb-1 space-y-1 font-instrument">
+              <p className="text-lg text-[#252729] ">
                 Whether you have an idea, a question, or simply want
               </p>
               <p className="text-lg text-[#252729]">
                 to explore how V can work together, V're just a
               </p>
-              <p className="text-lg text-[#252729] border-b-2 border-primary inline-block">
+              <p className="text-lg text-[#252729] inline-block">
                 message away.
               </p>
             </div>
-            <div className="space-y-1 pt-4">
+            <div className="space-y-1 pt-0">
               <p className="text-lg text-[#252729]">
                 Let's catch up over coffee.
               </p>
@@ -138,7 +138,7 @@ const ContactForm = ({ onSubmitSuccess }) => {
           </div>
 
           {/* Right Section - Form */}
-     <div className="space-y-4">
+     <div className="space-y-4  relative top-30">
   <div className="text-center">
     <h1 className="text-xl md:text-2xl font-normal font-halant text-[#252729] mb-1">
       Join the Story
@@ -229,7 +229,7 @@ const ContactForm = ({ onSubmitSuccess }) => {
       <button
         onClick={handleSubmit}
         disabled={isSubmitting}
-        className="w-auto bg-primary font-instrument shadow-[0_4px_12px_0_rgba(0,0,0,0.2)] text-white py-2.5 px-8 rounded-full text-sm font-medium hover:bg-[#d94e1f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-auto bg-primary cursor-pointer font-instrument shadow-[0_4px_12px_0_rgba(0,0,0,0.2)] text-white py-2.5 px-8 rounded-full text-sm font-medium hover:bg-[#d94e1f] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {isSubmitting ? 'Submitting...' : 'Submit'}
       </button>
@@ -237,10 +237,10 @@ const ContactForm = ({ onSubmitSuccess }) => {
   </div>
 
   <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-sm text-[#252729] pt-2">
-    <a href="mailto:vernan@vernanfilms.co.in" className="hover:text-primary transition-colors">
+    <a href="mailto:vernan@vernanfilms.co.in" className="text-primary transition-colors">
       vernan@vernanfilms.co.in
     </a>
-    <a href="tel:+919876164657" className="hover:text-primary transition-colors">
+    <a href="tel:+919876164657" className="text-primary transition-colors">
       +91 98761 64657
     </a>
   </div>

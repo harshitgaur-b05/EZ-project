@@ -42,6 +42,7 @@ function App() {
       ) : (
         // After form submission, show Navbar and other components
         <>
+         <Navbar />
          
           <div 
             className="min-h-screen" 
