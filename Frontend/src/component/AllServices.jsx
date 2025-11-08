@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 // Local Assets
 
-import papertape from "../assets/storyboard/papertape.svg";
+import papertape from "../assets/storyboard/papertapeerrr.svg";
 import leftimage from "../assets/storyboard/leftimage.svg";
 import middleimage from "../assets/storyboard/middleimage.svg";
 import rightimage from "../assets/storyboard/rightimage.svg";
