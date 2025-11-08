@@ -61,10 +61,6 @@ export default function ShowcasePage({ onPolaroidClick }) {
   return (
     <section
       className="relative min-h-screen bg-background flex items-center justify-center px-6 md:px-12 lg:px-24 overflow-hidden"
-      style={{
-        backgroundColor: "#FDD0C1",
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.8'/%3E%3C/svg%3E")`,
-      }}
     >
       <div className="min-h-screen flex flex-col">
         {/* Header */}
@@ -92,27 +88,28 @@ export default function ShowcasePage({ onPolaroidClick }) {
                 className="relative" // Container for polaroid
               >
                 <motion.div
-                  className={`bg-white shadow-lg border border-gray-200 w-56  flex flex-col items-center ${index === 0 ? "rotate-8" : index === 2 ? "-rotate-8" : ""
-                    } transition-transform duration-300 cursor-pointer hover:scale-105`}
+                  className={`bg-white shadow-lg border border-gray-200 w-56  flex flex-col items-center ${
+                    index === 0 ? "rotate-8" : index === 2 ? "-rotate-8" : ""
+                  } transition-transform duration-300 cursor-pointer hover:scale-105`}
                   style={{ boxShadow: "0 8px 24px 0 rgb(0 0 0 / 0.07)" }}
                   onClick={() => handlePolaroidClick(feat)}
                 >
                   <img
                     src={PaperTape}
                     alt="tape"
-                    className={`absolute w-28 ${index === 0
+                    className={`absolute w-28 ${
+                      index === 0
                         ? "-left-10 -top-7 -rotate-10"
                         : index === 1
-                          ? "left-1/2 -translate-x-1/2 -top-6 rotate-3"
-                          : "-right-8 -top-7 rotate-35"
-                      } z-20`}
+                        ? "left-1/2 -translate-x-1/2 -top-6 rotate-3"
+                        : "-right-8 -top-7 rotate-35"
+                    } z-20`}
                   />
                   <motion.img
                     src={feat.svgImage}
                     alt={feat.imageTitle}
                     className="w-full h-auto object-contain  relative z-10"
-                    style={{
-                      maxHeight: index === 1 ? '280px' : '320px',
+                    style={{ maxHeight: index === 1 ? '280px' : '320px', 
                       rotate: index === 0 ? '-7.5deg' : index === 2 ? '7.5deg' : '0deg',
                       transformOrigin: 'center'
                     }}

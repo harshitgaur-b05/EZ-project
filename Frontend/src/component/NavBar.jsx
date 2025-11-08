@@ -72,10 +72,10 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
+    { name: 'Services', href: '#portfolio' },
     { name: 'Our Story', href: '#story' },
     { name: 'Their Stories', href: '#stories' },
-    {name: 'Vernan', href: '#services'}
+    {name: 'Vernan', href: '#portfolio'}
   ];
 
   return (

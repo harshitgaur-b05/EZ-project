@@ -121,7 +121,9 @@ function App() {
           <div id="hero">
             <HeroSection />
           </div>
-          <AppContent onVFilmsViewChange={setIsVFilmsView} />
+          <div id="portfolio">
+            <AppContent onVFilmsViewChange={setIsVFilmsView} />
+          </div>
           <div id="stories">
             <AboutSection />
           </div>
