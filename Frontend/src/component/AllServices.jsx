@@ -8,6 +8,7 @@ import Leftimage from "../assets/storyboard/Leftimage.svg";
 import Middleimage from "../assets/storyboard/Middleimage.svg";
 import Rightimage from "../assets/storyboard/Rightimage.svg";
 import FrameBorder from "../assets/storyboard/FrameBorder.svg";
+import  Underline  from "../assets/storyboard/underline.svg";
 
 // Data for the polaroids
 const showcaseData = [
@@ -69,7 +70,7 @@ export default function AllServices({ onPolaroidClick }) {
             The storyboard reveals the breadth of our craft.
           </h1>
           <img
-            src="/underline-asset.svg"
+            src={Underline}
             alt="underline"
             className="mx-auto"
             style={{ width: "878px", height: "28px" }}
