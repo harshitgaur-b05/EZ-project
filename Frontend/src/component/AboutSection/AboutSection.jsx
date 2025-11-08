@@ -152,7 +152,7 @@ const AboutSection = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                     >
-                        <h2 className="text-2xl text-[#0F3255] font-halant font-medium mb-8 max-w-3xl mx-auto leading-tight">
+                        <h2 className="text-2xl text-brand-blue font-halant font-medium mb-8 max-w-3xl mx-auto leading-tight">
                             Take a closer look at the stories V bring to life.
                         </h2>
                         <motion.button
