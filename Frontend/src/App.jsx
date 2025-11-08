@@ -35,9 +35,9 @@ function App() {
         <div id="story">
           <Aboutus/>
         </div>
-        {/* <div id="contact">
+        <div id="contact">
           <ContactForm />
-        </div> */}
+        </div>
       </div>
     </>
   )

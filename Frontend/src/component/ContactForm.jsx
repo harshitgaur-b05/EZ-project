@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Bottomleft from '../assets/formsvg/bottom-left-circle.svg'
-import Topleft from '../assets/formsvg/top-right-circle.svg'
+import Bottomleft from '../assets/formsvg/bottom-left-circle.svg';
+import Topleft from '../assets/formsvg/top-right-circle.svg';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -97,7 +97,7 @@ const ContactForm = () => {
   return (
     <div className="min-h-screen bg-[#FBF4F0] relative overflow-hidden">
       {/* Layer 1: Background is the bg-[#FBF4F0] above (z-index: 0) */}
-      
+
       {/* Layer 2: Decorative Circles - Middle layer */}
       <div className="absolute top-0 right-0 w-[200px] h-[200px] md:w-[280px] md:h-[280px] lg:w-[350px] lg:h-[350px] z-10 pointer-events-none">
         <img src={Topleft} alt="Top Right Decoration" className="w-full h-full" />
@@ -110,7 +110,7 @@ const ContactForm = () => {
       {/* Layer 3: Main Content - Top layer */}
       <div className="container mx-auto px-6 md:px-8 lg:px-12 py-6 md:py-10 lg:py-6 relative z-20">
         <div className="grid grid-cols-1  lg:grid-cols-2 gap-12 lg:gap-16 items-center max-w-7xl mx-auto">
-          
+
           {/* Left Section */}
           <div className="space-y-6 pt-8 relative top-20 ">
             <div className="mb-1 space-y-1 font-instrument">
@@ -155,7 +155,7 @@ const ContactForm = () => {
         placeholder="Your name*"
         className={`w-full px-3 py-2 text-sm bg-white border ${
           errors.name ? 'border-red-500' : 'border-gray-200'
-        } rounded-lg focus:outline-none focus:border-primary transition-colors text-[#252729]`}
+        } rounded-lg focus:outline-none focus:border-primary transition-colors text-[#252729] font-instrument`}
       />
       {errors.name && (
         <p className="text-red-500 text-xs mt-1">{errors.name}</p>
@@ -171,7 +171,7 @@ const ContactForm = () => {
         placeholder="Your email*"
         className={`w-full px-3 py-2 text-sm bg-white border ${
           errors.email ? 'border-red-500' : 'border-gray-200'
-        } rounded-lg focus:outline-none focus:border-primary transition-colors text-[#252729]`}
+        } rounded-lg focus:outline-none focus:border-primary transition-colors text-[#252729] font-instrument`}
       />
       {errors.email && (
         <p className="text-red-500 text-xs mt-1">{errors.email}</p>
@@ -187,7 +187,7 @@ const ContactForm = () => {
         placeholder="Phone"
         className={`w-full px-3 py-2 text-sm bg-white border ${
           errors.phone ? 'border-red-500' : 'border-gray-200'
-        } rounded-lg focus:outline-none focus:border-primary transition-colors text-[#252729]`}
+        } rounded-lg focus:outline-none focus:border-primary transition-colors text-[#252729] font-instrument`}
       />
       {errors.phone && (
         <p className="text-red-500 text-xs mt-1">{errors.phone}</p>
@@ -203,7 +203,7 @@ const ContactForm = () => {
         rows="4"
         className={`w-full px-3 py-2 text-sm bg-white border ${
           errors.message ? 'border-red-500' : 'border-gray-200'
-        } rounded-lg focus:outline-none focus:border-primary transition-colors resize-none text-[#252729]`}
+        } rounded-lg focus:outline-none focus:border-primary transition-colors resize-none text-[#252729] font-instrument`}
       ></textarea>
       {errors.message && (
         <p className="text-red-500 text-xs mt-1">{errors.message}</p>
@@ -247,12 +247,6 @@ const ContactForm = () => {
       </div>
 
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&display=swap');
-        
-        * {
-          font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-        
         input::placeholder,
         textarea::placeholder {
           color: #999;
