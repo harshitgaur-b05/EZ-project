@@ -72,16 +72,16 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Services', href: '#services' },
+    { name: 'Services', href: '#portfolio' },
     { name: 'Our Story', href: '#story' },
     { name: 'Their Stories', href: '#stories' },
-    {name: 'Vernan', href: '#services'}
+    {name: 'Vernan', href: '#portfolio'}
   ];
 
   return (
     <nav className="fixed top-0 left-0 w-full h-[70px] bg-white/25 z-50">
       {/* Logo - Left side - only show when on hero section */}
-      {showLogo && (
+      {!showLogo && (
         <div className="absolute left-6 top-1/2 -translate-y-1/2 z-50">
           <img 
             src={Logo} 
