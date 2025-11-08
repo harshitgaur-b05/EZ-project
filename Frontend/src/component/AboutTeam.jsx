@@ -4,7 +4,7 @@ import CircularRing from '../assets//aboutus/circular-ring.svg';
 import PageAsset from '../assets/about/Page.png';
 
 
-const Aboutus = () => {
+const AboutTeam = () => {
     const stats = [
         { number: '85+', label: 'Projects' },
         { number: '50+', label: 'Happy Clients' },
@@ -132,5 +132,5 @@ const Aboutus = () => {
 };
 
 
-export default Aboutus;
+export default AboutTeam;
 

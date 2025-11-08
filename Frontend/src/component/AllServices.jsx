@@ -53,7 +53,7 @@ Cultural Storytelling`,
   },
 ];
 
-export default function ShowcasePage({ onPolaroidClick }) {
+export default function AllServices({ onPolaroidClick }) {
   const handlePolaroidClick = (polaroidData) => {
     onPolaroidClick(polaroidData);
   };

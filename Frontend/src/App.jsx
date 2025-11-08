@@ -6,10 +6,10 @@ import AboutSection from './component/AboutSection/AboutSection'
 import ContactForm from './component/ContactForm'
 import HeroSection from './component/HeroSection'
 import Navbar from './component/NavBar'
-import Aboutus from './component/Aboutus'
+import AboutTeam from './component/AboutTeam'
 import PortfolioHighlightReel from './component/Portfolio'
-import ShowcasePage from './component/ShowcasePage';
-import VFilmsLanding from './component/VFilmsLanding';
+import AllServices from './component/AllServices';
+import Services from './component/Services';
 
 function AppContent({ onVFilmsViewChange }) {
   const [activePolaroid, setActivePolaroid] = useState(null);
@@ -73,7 +73,7 @@ function AppContent({ onVFilmsViewChange }) {
         className="absolute inset-0"
         onMouseLeave={handlePolaroidHoverLeave}
       >
-        <ShowcasePage 
+        <AllServices 
           onPolaroidClick={handlePolaroidClick} 
           onPolaroidHover={handlePolaroidHover}
         />
@@ -90,7 +90,7 @@ function AppContent({ onVFilmsViewChange }) {
             transition={{ duration: 0.5, ease: "easeInOut" }}
             className="absolute inset-0"
           >
-            <VFilmsLanding 
+            <Services 
               polaroidData={activePolaroid || hoveredPolaroid} 
               onBackClick={handleBackToShowcase} 
             />
@@ -131,7 +131,7 @@ function App() {
             <PortfolioHighlightReel/>
           </div>
           <div id="story">
-            <Aboutus/>
+            <AboutTeam/>
           </div>
           <div id="contact">
             <ContactForm />
