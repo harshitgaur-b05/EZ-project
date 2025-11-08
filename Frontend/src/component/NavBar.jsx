@@ -82,18 +82,18 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full h-[70px] bg-white/25 z-50">
       {/* Logo - Left side - only show when on hero section */}
       {!showLogo && (
-        <div className="absolute left-6 top-1/2 -translate-y-1/2 z-50">
+        <div className="absolute left-4 sm:left-6 top-1/2 -translate-y-1/2 z-50">
           <img 
             src={Logo} 
             alt="V Films Logo" 
-            className="h-10 w-auto object-contain"
+            className="h-8 sm:h-10 w-auto object-contain"
           />
         </div>
       )}
 
       {/* Menu Toggle Button with SVG Images */}
       <motion.button
-        className="absolute right-6 top-1/2 -translate-y-1/2 cursor-pointer z-60 p-2 w-10 h-10 flex items-center justify-center"
+        className="absolute right-4 sm:right-6 top-1/2 -translate-y-1/2 cursor-pointer z-60 p-2 w-10 h-10 flex items-center justify-center"
         onClick={toggleMenu}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
@@ -143,7 +143,7 @@ const Navbar = () => {
 
             {/* Content */}
             <motion.div
-              className="absolute top-0 right-0 w-full h-full flex items-center justify-end pr-20 gap-8"
+              className="absolute top-0 right-0 w-full lg:w-full h-auto lg:h-full flex flex-col lg:flex-row items-center justify-center lg:justify-end py-10 lg:py-0 lg:pr-20 gap-6 sm:gap-8 bg-white lg:bg-transparent"
               variants={menuVariants}
               initial="closed"
               animate="open"
@@ -153,7 +153,7 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-800 text-sm font-medium px-5 py-2.5 rounded-full hover:bg-orange-50 hover:text-orange-500 transition-all hover:scale-105"
+                  className="text-gray-800 text-base sm:text-sm font-medium px-6 sm:px-5 py-3 sm:py-2.5 rounded-full hover:bg-orange-50 hover:text-orange-500 transition-all hover:scale-105 w-full sm:w-auto text-center"
                   onClick={(e) => {
                     e.preventDefault();
                     setIsOpen(false);
@@ -167,7 +167,7 @@ const Navbar = () => {
 
               <a
                 href="#contact"
-                className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-7 py-3 rounded-full text-sm font-medium flex items-center gap-2 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 transition-all hover:scale-105 hover:-translate-y-0.5"
+                className="bg-gradient-to-r from-orange-500 to-orange-400 text-white px-8 sm:px-7 py-3.5 sm:py-3 rounded-full text-base sm:text-sm font-medium flex items-center justify-center gap-2 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 transition-all hover:scale-105 hover:-translate-y-0.5 w-full sm:w-auto"
                 onClick={(e) => {
                   e.preventDefault();
                   setIsOpen(false);
