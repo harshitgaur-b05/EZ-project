@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Local Assets
-import underline from "../assets/storyboard/underline-asset.svg";
+
 import PaperTape from "../assets/storyboard/PaperTape.svg";
 import LeftImage from "../assets/storyboard/Leftimage.svg";
 import MiddleImage from "../assets/storyboard/Middleimage.svg";
@@ -69,7 +69,7 @@ export default function AllServices({ onPolaroidClick }) {
             The storyboard reveals the breadth of our craft.
           </h1>
           <img
-            src={underline}
+            src="/underline-asset.svg"
             alt="underline"
             className="mx-auto"
             style={{ width: "878px", height: "28px" }}
