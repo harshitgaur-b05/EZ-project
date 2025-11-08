@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 // Local Assets
 
-import papertape from "../assets/storyboard/papertapeerrr.svg";
+import papertapeerrr  from "../assets/storyboard/papertapeerrr.svg";
 import leftimage from "../assets/storyboard/leftimage.svg";
 import middleimage from "../assets/storyboard/middleimage.svg";
 import rightimage from "../assets/storyboard/rightimage.svg";
@@ -96,7 +96,7 @@ export default function AllServices({ onPolaroidClick }) {
                   onClick={() => handlePolaroidClick(feat)}
                 >
                   <img
-                    src={papertape}
+                    src={papertapeerrr }
                     alt="tape"
                     className={`absolute w-28 ${
                       index === 0
