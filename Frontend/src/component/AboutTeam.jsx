@@ -4,7 +4,7 @@ import CircularRing from '../assets//aboutus/circular-ring.svg';
 import PageAsset from '../assets/about/Page.png';
 
 
-const Aboutus = () => {
+const AboutTeam = () => {
     const stats = [
         { number: '85+', label: 'Projects' },
         { number: '50+', label: 'Happy Clients' },
@@ -84,45 +84,94 @@ const Aboutus = () => {
 
 
                     {/* Right Side - Mountain with Full Circle Ring */}
-                    <div className="relative w-full h-[600px] flex items-center justify-center">
-                        {/* Wrapper Container - Centered */}
-                        <div className="absolute w-[450px] h-[450px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                            {/* Top Semicircle - Rotates and grows */}
-                            <motion.div
-                                className="absolute w-full h-1/2 top-0 left-0 overflow-hidden origin-bottom"
-                            >
-                                <img
-                                    src={CircularRing}
-                                    alt="Semicircular Ring Top"
-                                    className="w-full h-full object-contain"
-                                />
-                            </motion.div>
+      <div className="relative w-full h-[600px] flex items-center justify-center">
+  {/* Wrapper Container - Centered */}
+  <div className="absolute w-[450px] h-[450px] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+    {/* Top Semicircle - Scale once, then rotate slowly */}
+    <motion.div
+      className="absolute w-full h-1/2 top-0 left-0 overflow-hidden origin-bottom"
+      initial={{ 
+        scale: 0,
+        rotate: 0
+      }}
+      animate={{ 
+        scale: [0, 1, 1],
+        rotate: [0, -360, -720]
+      }}
+      transition={{
+        scale: {
+          duration: 2,
+          times: [0, 1, 1],
+          ease: "easeOut"
+        },
+        rotate: {
+          duration: 12,
+          times: [0, 0.17, 1],
+          ease: "linear",
+          repeat: Infinity
+        }
+      }}
+    >
+      <img
+        src={CircularRing}
+        alt="Semicircular Ring Top"
+        className="w-full h-full object-contain"
+      />
+    </motion.div>
+
+    {/* Bottom Semicircle - Scale once, then rotate slowly */}
+    <motion.div
+      className="absolute w-full h-1/2 bottom-0 left-0 overflow-hidden origin-top"
+      initial={{ 
+        scale: 0,
+        rotate: 0
+      }}
+      animate={{ 
+        scale: [0, 1, 1],
+        rotate: [0, -360, -720]
+      }}
+      transition={{
+        scale: {
+          duration: 2,
+          times: [0, 1, 1],
+          ease: "easeOut"
+        },
+        rotate: {
+          duration: 12,
+          times: [0, 0.17, 1],
+          ease: "linear",
+          repeat: Infinity
+        }
+      }}
+    >
+      <img
+        src={CircularRing}
+        alt="Semicircular Ring Bottom"
+        className="w-full h-full object-contain scale-y-[-1]"
+      />
+    </motion.div>
+  </div>
+
+  {/* Mountain in Center - Fades in after rings */}
+  <motion.div
+    className="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+    initial={{ scale: 0, opacity: 0 }}
+    animate={{ scale: 1, opacity: 1 }}
+    transition={{ 
+      duration: 1,
+      delay: 1.5,
+      ease: "easeOut" 
+    }}
+  >
+    <img
+      src={MountainImage}
+      alt="Mountain"
+      className="h-80 object-contain"
+    />
+  </motion.div>
+</div>
 
 
-                            {/* Bottom Semicircle (Mirrored 180°) - Rotates and grows */}
-                            <motion.div
-                                className="absolute w-full h-1/2 bottom-0 left-0 overflow-hidden origin-top"
-                            >
-                                <img
-                                    src={CircularRing}
-                                    alt="Semicircular Ring Bottom"
-                                    className="w-full h-full object-contain scale-y-[-1]"
-                                />
-                            </motion.div>
-                        </div>
-
-
-                        {/* Mountain in Center - Centered & Animated */}
-                        <motion.div
-                            className="absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
-                        >
-                            <img
-                                src={MountainImage}
-                                alt="Mountain"
-                                className="h-80 object-contain"
-                            />
-                        </motion.div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -132,5 +181,5 @@ const Aboutus = () => {
 };
 
 
-export default Aboutus;
+export default AboutTeam;
 

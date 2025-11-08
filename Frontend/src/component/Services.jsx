@@ -79,7 +79,7 @@ Corporate Videos
 };
 
 
-const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
+const Services = ({ onBackClick, polaroidData: propPolaroidData }) => {
   const [isExploreHovered, setIsExploreHovered] = useState(false);
   const [isCardHovered, setIsCardHovered] = useState(false);
   const location = useLocation();
@@ -110,10 +110,6 @@ const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
 
   return (
     <section className="min-h-screen bg-background flex items-center justify-center px-6 md:px-12 lg:px-24"
-      style={{
-        backgroundColor: "#FDD0C1",
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.5' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.8'/%3E%3C/svg%3E")`,
-      }}
     >
       <div className="min-h-screen relative overflow-x-hidden font-serif w-full">
         {/* Decorative Images: Rendered dynamically based on ID */}
@@ -141,7 +137,7 @@ const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
         </button>
 
         {/* Main Content */}
-        <div className="flex flex-wrap justify-center items-start px-10 py-10 gap-10 lg:gap-20">
+        <div className="flex flex-wrap justify-center items-start px-10 py-2 gap-10 lg:gap-20">
           {/* Polaroid Card */}
           <div
             className={`relative bg-white overflow-hidden mx-auto transition-all duration-500 ${isCardHovered ? "-translate-y-4 rotate-1" : "rotate-0"}`}
@@ -196,4 +192,4 @@ const VFilmsLanding = ({ onBackClick, polaroidData: propPolaroidData }) => {
   );
 };
 
-export default VFilmsLanding;
+export default Services;
