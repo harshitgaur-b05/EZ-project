@@ -72,7 +72,7 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { name: 'Services', href: '#portfolio' },
+    { name: 'Services', href: '#services' },
     { name: 'Our Story', href: '#story' },
     { name: 'Their Stories', href: '#stories' },
     {name: 'Vernan', href: '#hero'}

@@ -78,7 +78,6 @@ Corporate Videos
   imageTitle: "Film Production",
 };
 
-
 const Services = ({ onBackClick, polaroidData: propPolaroidData }) => {
   const [isExploreHovered, setIsExploreHovered] = useState(false);
   const [isCardHovered, setIsCardHovered] = useState(false);
@@ -109,8 +108,7 @@ const Services = ({ onBackClick, polaroidData: propPolaroidData }) => {
   };
 
   return (
-    <section className="min-h-screen bg-background flex items-center justify-center px-6 md:px-12 lg:px-24"
-    >
+    <section className="min-h-screen bg-background flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-24">
       <div className="min-h-screen relative overflow-x-hidden font-serif w-full">
         {/* Decorative Images: Rendered dynamically based on ID */}
         {content.decorativeImages.map(img => (
@@ -118,31 +116,30 @@ const Services = ({ onBackClick, polaroidData: propPolaroidData }) => {
         ))}
 
         {/* Quote Section */}
-        <div className="text-center px-5 pt-16 pb-10 relative">
-          <p className="text-2xl md:text-3xl italic text-gray-800 max-w-4xl mx-auto font-halant">
+        <div className="text-center px-4 sm:px-5 pt-12 sm:pt-14 md:pt-16 pb-8 sm:pb-10 md:pb-10 relative">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl italic text-gray-800 max-w-2xl sm:max-w-3xl md:max-w-4xl mx-auto font-halant">
             {content.quote}
           </p>
-          <div className="flex justify-center mt-4">
-            <img src={Vector5} alt="decorative line" className="w-full max-w-3xl" />
+          <div className="flex justify-center mt-3 sm:mt-4">
+            <img src={Vector5} alt="decorative line" className="w-full max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-3xl" />
           </div>
         </div>
 
         {/* Back Button */}
         <button
           onClick={handleBackClick}
-          className="absolute left-40 top-44 px-6 py-2 border-2 border-[#d35400] bg-transparent text-[#d35400] rounded-full hover:cursor-pointer duration-300 flex items-center gap-2 text-sm"
+          className="absolute left-4 sm:left-6 md:left-8 lg:left-40 top-8 sm:top-10 md:top-12 lg:top-44 px-4 sm:px-5 md:px-6 py-1 sm:py-2 border-2 border-[#d35400] bg-transparent text-[#d35400] rounded-full hover:cursor-pointer duration-300 flex items-center gap-2 text-xs sm:text-sm"
         >
-          <img src={Icon} alt="Back icon" />
+          <img src={Icon} alt="Back icon" className="w-3 h-3 sm:w-4 sm:h-4" />
           <span>Back</span>
         </button>
 
         {/* Main Content */}
-        <div className="flex flex-wrap justify-center items-start px-10 py-2 gap-10 lg:gap-20">
-          {/* Polaroid Card */}
+        <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start px-4 sm:px-6 md:px-8 lg:px-10 py-4 sm:py-6 md:py-8 lg:py-2 gap-6 sm:gap-8 md:gap-10 lg:gap-20">
+          {/* Polaroid Card - Fixed size for lg+ */}
           <div
-            className={`relative bg-white overflow-hidden mx-auto transition-all duration-500 ${isCardHovered ? "-translate-y-4 rotate-1" : "rotate-0"}`}
+            className={`relative bg-white overflow-hidden transition-all duration-500 ${isCardHovered ? "-translate-y-2 lg:-translate-y-4 rotate-1" : "rotate-0"} w-56`}
             style={{
-              maxWidth: '280px',
               padding: "8px 12px 12px 12px",
               boxShadow: isCardHovered
                 ? "0 25px 50px rgba(0,0,0,0.25), 0 10px 20px rgba(0,0,0,0.15)"
@@ -166,23 +163,23 @@ const Services = ({ onBackClick, polaroidData: propPolaroidData }) => {
           </div>
 
           {/* Info Section */}
-          <div className="max-w-lg relative">
-            <h2 className="text-lg md:text-2xl mb-10 text-gray-800 relative  right-40 font-instrument whitespace-pre-line ">
+          <div className="max-w-full sm:max-w-md md:max-w-lg relative text-center lg:text-left">
+            <h2 className="text-sm sm:text-base md:text-lg lg:text-2xl mb-6 sm:mb-8 md:mb-10 text-gray-800 font-instrument whitespace-pre-line lg:right-40">
               {polaroidData.description}
             </h2>
             <div
-              className="flex flex-col items-start gap-4 cursor-pointer group"
+              className="flex flex-col items-center lg:items-start gap-3 sm:gap-4 cursor-pointer group"
               onMouseEnter={() => setIsExploreHovered(true)}
               onMouseLeave={() => setIsExploreHovered(false)}
               onClick={() => alert("Exploring projects...")}
             >
-              <span className="text-lg text-[#d35400] font-instrument">
+              <span className="text-base sm:text-lg text-[#d35400] font-instrument">
                 Explore Now
               </span>
               <img
                 src={Arrow}
                 alt="arrow"
-                className={`transition-transform duration-300 ${isExploreHovered ? "translate-x-2" : ""} w-18 h-6`}
+                className={`transition-transform duration-300 ${isExploreHovered ? "translate-x-2" : ""} w-16 sm:w-18 h-5 sm:h-6`}
               />
             </div>
           </div>
