@@ -2,12 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 
 // Local Assets
-import underline from "../assets/storyBoard/underline.svg";
-import PaperTape from "../assets/storyBoard/PaperTape.svg";
-import LeftImage from "../assets/storyBoard/LeftImage.svg";
-import MiddleImage from "../assets/storyBoard/MiddleImage.svg";
-import RightImage from "../assets/storyBoard/RightImage.svg";
-import FrameBorder from "../assets/storyBoard/FrameBorder.svg";
+import underline from "../assets/storyboard/underline.svg";
+import PaperTape from "../assets/storyboard/PaperTape.svg";
+import LeftImage from "../assets/storyboard/LeftImage.svg";
+import MiddleImage from "../assets/storyboard/MiddleImage.svg";
+import RightImage from "../assets/storyboard/RightImage.svg";
+import FrameBorder from "../assets/storyboard/FrameBorder.svg";
 
 // Data for the polaroids
 const showcaseData = [
