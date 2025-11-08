@@ -159,6 +159,12 @@ const AboutSection = () => {
                             className="bg-[#FF5733] text-white font-instrument  px-10 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-shadow"
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
+                            onClick={() => {
+                                const portfolioSection = document.getElementById('services');
+                                if (portfolioSection) {
+                                    portfolioSection.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
                         >
                             View Portfolio
                         </motion.button>
