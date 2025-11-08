@@ -75,7 +75,7 @@ const Navbar = () => {
     { name: 'Services', href: '#portfolio' },
     { name: 'Our Story', href: '#story' },
     { name: 'Their Stories', href: '#stories' },
-    {name: 'Vernan', href: '#portfolio'}
+    {name: 'Vernan', href: '#hero'}
   ];
 
   return (
