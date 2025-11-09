@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "2fe578d4-cf63-47c8-b610-a4b6b3c0b766",
+		"name": "Contact Us API Dump",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37520703"
+	},
+	"item": [
+		{
+			"name": "https://vernanbackend.ezlab.in/api/contact-us/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Test user\",\r\n  \"email\": \"testuser@gmail.com\",\r\n  \"phone\": \"908765498\",\r\n  \"message\": \"This is a message\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://vernanbackend.ezlab.in/api/contact-us/",
+					"protocol": "https",
+					"host": [
+						"vernanbackend",
+						"ezlab",
+						"in"
+					],
+					"path": [
+						"api",
+						"contact-us",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
